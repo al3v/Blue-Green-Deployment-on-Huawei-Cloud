@@ -90,7 +90,8 @@ hcloud elb ListMembers/v3 --pool_id=your_pool_id --project_id=your_project_id --
 
 The following screenshot demonstrates the real-time weight change of the backend servers during deployment. The terminal output shows the JSON response indicating the operating status and weight of the backend servers, while the Huawei Cloud console reflects these changes in real-time:
 
-![Real-Time Deployment Example](https://github.com/user-attachments/assets/59dc01b1-6437-4183-a32c-a262dbe7fe40)
+![image](https://github.com/user-attachments/assets/467b16c1-cfd8-4907-af4e-4dfbd4963ae6)
+
 
 In this example, you can see:
 - The terminal displays the weight of `100` for the first server and `0` for the second server, indicating that all traffic is directed to the first server.
