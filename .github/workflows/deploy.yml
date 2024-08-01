@@ -19,6 +19,13 @@ jobs:
         sudo apt-get update
         sudo apt-get install -y python3-pip
         pip3 install hcloud
+
+    - name: Configure Huawei Cloud CLI credentials
+      run: |
+        mkdir -p ~/.hcloud
+        echo "[default]" > ~/.hcloud/config
+        echo "ak = ${{ secrets.HUAWEI_CLOUD_ACCESS_KEY }}" >> ~/.hcloud/config
+        echo "sk = ${{ secrets.HUAWEI_CLOUD_SECRET_KEY }}" >> ~/.hcloud/config
         
     - name: Run deployment script
       run: |
@@ -31,4 +38,3 @@ jobs:
         REGION: "tr-west-1"
         SERVER1_ID: "4668b46f-7090-432c-a176-fcfa061e5179"
         SERVER2_ID: "6e0ca664-ea72-4add-8fad-8a0a3cba2013"
-        HUAWEI_CLOUD_CLI_CREDENTIALS: ${{ secrets.HUAWEI_CLOUD_CLI_CREDENTIALS }}
