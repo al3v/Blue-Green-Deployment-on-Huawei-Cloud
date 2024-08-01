@@ -21,7 +21,7 @@ jobs:
         curl -LO "https://ap-southeast-3-hwcloudcli.obs.ap-southeast-3.myhuaweicloud.com/cli/latest/huaweicloud-cli-linux-amd64.tar.gz"
         tar -zxvf huaweicloud-cli-linux-amd64.tar.gz
         mv $(pwd)/hcloud /usr/local/bin/
-        hcloud auto-complete on
+        yes y | hcloud auto-complete on
         hcloud version
         
 
