@@ -58,6 +58,18 @@ I tested this script on Huawei Cloud using an Elastic Load Balancer (ELB) with t
 
 ![image](https://github.com/user-attachments/assets/6ba38b88-91f0-4a90-b2aa-1a9c9c56bb73)
 
+-----------------------------------------------
+### PS: 
+
+ Server ID are different than ECS IDs but they are mapped, you can retrieve SERVER IDs via 'hcloud' :
+
+ List Members in a specific Pool
+ 
+```bash
+hcloud elb ListMembers/v3 --pool_id=your_pool_id --project_id=your_project_id --cli-region=your_region
+```
+
+----------------------------------------
 
 4. Choose the appropriate script for your environment:
 
