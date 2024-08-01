@@ -54,6 +54,10 @@ I tested this script on Huawei Cloud using an Elastic Load Balancer (ELB) with t
       --project_id=<YOUR_PROJECT_ID> \
       --cli-region=<YOUR_REGION>
     ```
+ - On the console it is just Backend Server Group ID:
+
+![image](https://github.com/user-attachments/assets/6ba38b88-91f0-4a90-b2aa-1a9c9c56bb73)
+
 
 4. Choose the appropriate script for your environment:
 
