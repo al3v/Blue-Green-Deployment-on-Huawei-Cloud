@@ -18,7 +18,13 @@ jobs:
       run: |
         sudo apt-get update
         sudo apt-get install -y python3-pip
-        pip3 install hcloud
+        curl -LO "https://ap-southeast-3-hwcloudcli.obs.ap-southeast-3.myhuaweicloud.com/cli/latest/huaweicloud-cli-linux-amd64.tar.gz"
+        tar -zxvf huaweicloud-cli-linux-amd64.tar.gz
+        mv $(pwd)/hcloud /usr/local/bin/
+        hcloud auto-complete on
+        hcloud version
+        
+
 
     - name: Configure Huawei Cloud CLI credentials
       run: |
