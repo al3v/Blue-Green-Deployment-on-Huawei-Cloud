@@ -20,18 +20,13 @@ jobs:
         sudo apt-get install -y python3-pip
         curl -LO "https://ap-southeast-3-hwcloudcli.obs.ap-southeast-3.myhuaweicloud.com/cli/latest/huaweicloud-cli-linux-amd64.tar.gz"
         tar -zxvf huaweicloud-cli-linux-amd64.tar.gz
-        mv $(pwd)/hcloud /usr/local/bin/
+        sudo mv $(pwd)/hcloud /usr/local/bin/
         yes y | hcloud auto-complete on
         hcloud version
-        
 
-
-    - name: Configure Huawei Cloud CLI credentials
+    - name: Configure Huawei Cloud CLI profile
       run: |
-        mkdir -p ~/.hcloud
-        echo "[default]" > ~/.hcloud/config
-        echo "ak = ${{ secrets.HUAWEI_CLOUD_ACCESS_KEY }}" >> ~/.hcloud/config
-        echo "sk = ${{ secrets.HUAWEI_CLOUD_SECRET_KEY }}" >> ~/.hcloud/config
+        hcloud configure set --ak ${{ secrets.HUAWEI_CLOUD_ACCESS_KEY }} --sk ${{ secrets.HUAWEI_CLOUD_SECRET_KEY }} --region tr-west-1
 
     - name: Run deployment script
       run: |
