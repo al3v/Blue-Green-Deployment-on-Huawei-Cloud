@@ -37,5 +37,5 @@ jobs:
         POOL_ID: "5cd8db89-3072-4728-91da-f16ac11c422e"
         PROJECT_ID: "da9c89f493fb4554afab5f67a07ba4fd"
         REGION: "tr-west-1"
-        SERVER1_ID: "2ca207a9-e3e9-4229-87a4-beb7ecbe7015"
-        SERVER2_ID: "57e5bbbf-b623-4051-8253-3ae03ea5a944"
+        SERVER1_ID: "7ad73366-55ea-4d0a-8eee-7997ac0ab7d6"
+        SERVER2_ID: "fc1631bc-a98f-47f4-a2ac-82754d375c40"
