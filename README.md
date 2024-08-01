@@ -54,14 +54,14 @@ I tested this script on Huawei Cloud using an Elastic Load Balancer (ELB) with t
       --project_id=<YOUR_PROJECT_ID> \
       --cli-region=<YOUR_REGION>
     ```
- - On the console it is just Backend Server Group ID:
+ - On the console, it is just Backend Server Group ID:
 
 ![image](https://github.com/user-attachments/assets/6ba38b88-91f0-4a90-b2aa-1a9c9c56bb73)
 
 -----------------------------------------------
 ### PS: 
 
- Server ID are different than ECS IDs but they are mapped, you can retrieve SERVER IDs via 'hcloud' :
+ Server IDS are different than ECS IDs but they are mapped, you can retrieve SERVER IDs via 'hcloud' :
 
  List Members in a specific Pool
  
@@ -85,7 +85,22 @@ hcloud elb ListMembers/v3 --pool_id=your_pool_id --project_id=your_project_id --
         .\blue-green-deploy.ps1
         ```
 
-## 💻 Direct CLI Usage
+
+## 📸 Real-Time Deployment Example
+
+The following screenshot demonstrates the real-time weight change of the backend servers during deployment. The terminal output shows the JSON response indicating the operating status and weight of the backend servers, while the Huawei Cloud console reflects these changes in real-time:
+
+![Real-Time Deployment Example](https://github.com/user-attachments/assets/59dc01b1-6437-4183-a32c-a262dbe7fe40)
+
+In this example, you can see:
+- The terminal displays the weight of `100` for the first server and `0` for the second server, indicating that all traffic is directed to the first server.
+- The Huawei Cloud console reflects these weight settings, showing the same values for the backend servers.
+- The script then proceeds to deploy on the second server, updating the weights accordingly and ensuring the health of the servers before switching traffic.
+
+
+-----------------------------------------------------------------------------------------------------------
+
+## 💻 Direct CLI Usage (OPTIONAL)
 
 If you want to update the weights directly from the CLI, you can copy and paste the following commands:
 
@@ -113,15 +128,4 @@ hcloud elb ListMembers/v3 \
   --cli-region=<YOUR_REGION>
 ```
 
-
-## 📸 Real-Time Deployment Example
-
-The following screenshot demonstrates the real-time weight change of the backend servers during deployment. The terminal output shows the JSON response indicating the operating status and weight of the backend servers, while the Huawei Cloud console reflects these changes in real-time:
-
-![Real-Time Deployment Example](https://github.com/user-attachments/assets/59dc01b1-6437-4183-a32c-a262dbe7fe40)
-
-In this example, you can see:
-- The terminal displays the weight of `100` for the first server and `0` for the second server, indicating that all traffic is directed to the first server.
-- The Huawei Cloud console reflects these weight settings, showing the same values for the backend servers.
-- The script then proceeds to deploy on the second server, updating the weights accordingly and ensuring the health of the servers before switching traffic.
-
+-----------------------------------------------------------------------------------------------------------
