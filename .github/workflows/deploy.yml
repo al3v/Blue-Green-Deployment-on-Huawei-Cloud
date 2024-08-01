@@ -26,7 +26,7 @@ jobs:
 
     - name: Configure Huawei Cloud CLI profile
       run: |
-        hcloud configure set --ak=${{ secrets.HUAWEI_CLOUD_ACCESS_KEY }} --sk=${{ secrets.HUAWEI_CLOUD_SECRET_KEY }} --region=tr-west-1
+        hcloud configure set --cli-access-key=${{ secrets.HUAWEI_CLOUD_ACCESS_KEY }} --cli-secret-key=${{ secrets.HUAWEI_CLOUD_SECRET_KEY }} --cli-region=tr-west-1
 
     - name: Run deployment script
       run: |
