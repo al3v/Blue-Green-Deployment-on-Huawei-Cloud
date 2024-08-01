@@ -1,4 +1,4 @@
-# Automating Blue-Green Deployment on Huawei Cloud with GitHub Actions 🟦🟢
+# 🔵 Automating Blue-Green Deployment on Huawei Cloud with GitHub Actions 🟢
 
 This repository contains scripts to perform a Blue-Green deployment on Huawei Cloud using Elastic Load Balancer (ELB). The scripts direct traffic between two backend servers, perform deployments, and ensure servers are healthy before switching traffic.
 
