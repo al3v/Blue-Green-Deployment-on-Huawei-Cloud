@@ -4,6 +4,11 @@ This repository contains scripts to perform a Blue-Green deployment on Huawei Cl
 
 I tested this script on Huawei Cloud using an Elastic Load Balancer (ELB) with two backend Elastic Cloud Servers (ECS). Each ECS instance has Nginx installed, and the ELB health checks are configured to monitor port 80. This setup ensures that traffic can be directed to either server during deployment, validating the successful execution of the Blue-Green deployment strategy.
 
+![Animation-ezgif com-speed](https://github.com/user-attachments/assets/60276630-1357-46fd-a253-9fb6bfd1e2b7)
+
+
+
+
 ## 📋 Prerequisites
 
 - Huawei Cloud CLI (`hcloud`) must be installed and configured.
