@@ -1,0 +1,34 @@
+# .github/workflows/deploy.yml
+name: Blue-Green Deployment
+
+on:
+  push:
+    branches:
+      - main  # Adjust this to the branch you want to monitor
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v3
+      
+    - name: Set up Huawei Cloud CLI
+      run: |
+        sudo apt-get update
+        sudo apt-get install -y python3-pip
+        pip3 install hcloud
+        
+    - name: Run deployment script
+      run: |
+        chmod +x scripts/blue-green-deployment.sh
+        ./scripts/blue-green-deployment.sh
+      env:
+        LOAD_BALANCER_ID: "5ccc6ff6-6da8-45be-b330-854e4f3c0de2"
+        POOL_ID: "260ff233-4be0-4134-bc1a-cd3625c85f7c"
+        PROJECT_ID: "da9c89f493fb4554afab5f67a07ba4fd"
+        REGION: "tr-west-1"
+        SERVER1_ID: "4668b46f-7090-432c-a176-fcfa061e5179"
+        SERVER2_ID: "6e0ca664-ea72-4add-8fad-8a0a3cba2013"
+        HUAWEI_CLOUD_CLI_CREDENTIALS: ${{ secrets.HUAWEI_CLOUD_CLI_CREDENTIALS }}
