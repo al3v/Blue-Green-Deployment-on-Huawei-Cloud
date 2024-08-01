@@ -9,11 +9,11 @@ on:
 jobs:
   deploy:
     runs-on: ubuntu-latest
-    
+
     steps:
     - name: Checkout repository
       uses: actions/checkout@v3
-      
+
     - name: Set up Huawei Cloud CLI
       run: |
         sudo apt-get update
@@ -26,11 +26,11 @@ jobs:
         echo "[default]" > ~/.hcloud/config
         echo "ak = ${{ secrets.HUAWEI_CLOUD_ACCESS_KEY }}" >> ~/.hcloud/config
         echo "sk = ${{ secrets.HUAWEI_CLOUD_SECRET_KEY }}" >> ~/.hcloud/config
-        
+
     - name: Run deployment script
       run: |
-        chmod +x scripts/blue-green-deployment.sh
-        ./scripts/blue-green-deployment.sh
+        chmod +x blue-green-deployment.sh
+        ./blue-green-deployment.sh
       env:
         LOAD_BALANCER_ID: "5ccc6ff6-6da8-45be-b330-854e4f3c0de2"
         POOL_ID: "260ff233-4be0-4134-bc1a-cd3625c85f7c"
