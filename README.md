@@ -1,4 +1,4 @@
-# 🟦🟢 Blue-Green Deployment Script 🟢🟦
+# 🟦🟢 Blue-Green Deployment on Huawei Cloud 🟢🟦
 
 This repository contains scripts to perform a Blue-Green deployment on Huawei Cloud using Elastic Load Balancer (ELB). The scripts direct traffic between two backend servers, perform deployments, and ensure servers are healthy before switching traffic.
 
