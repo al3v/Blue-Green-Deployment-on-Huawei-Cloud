@@ -12,8 +12,8 @@ I tested this script on Huawei Cloud using an Elastic Load Balancer (ELB) with t
 ## 📋 Prerequisites
 
 - Huawei Cloud CLI (`hcloud`) must be installed and configured.
-- `jq` tool must be installed for JSON processing (for the bash script).
-- PowerShell must be installed (for the PowerShell script).
+- Huawei Cloud Access Key and Secret Key
+- An Elastic Load Balancer (ELB) setup with 2 backend servers.
 
 ## 📝 Script Details
 
